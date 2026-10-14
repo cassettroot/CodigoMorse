@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "Traductor bidireccional de Texto a Código Morse y viceversa con Webpack, Babel y ECMAScript moderno para Lenguajes y Autómatas",
   "main": "public/js/index.js",
+  "homepage": "https://cassettroot.github.io/CodigoMorse",
   "scripts": {
     "start": "webpack serve --mode development --open",
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build && node -e \"require('fs').writeFileSync('dist/.nojekyll', '')\"",
+    "deploy": "gh-pages -d dist --dotfiles"
   },
   "keywords": [
     "morse",
